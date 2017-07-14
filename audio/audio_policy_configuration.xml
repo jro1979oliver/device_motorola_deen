@@ -207,13 +207,13 @@
         </module>
 
         <!-- A2DP Input Audio HAL -->
-        <xi:include href="a2dp_in_audio_policy_configuration.xml"/>
+        <xi:include href="/vendor/etc/a2dp_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
-        <xi:include href="usb_audio_policy_configuration.xml"/>
+        <xi:include href="/vendor/etc/usb_audio_policy_configuration.xml"/>
 
         <!-- Remote Submix Audio HAL -->
-        <xi:include href="r_submix_audio_policy_configuration.xml"/>
+        <xi:include href="/vendor/etc/r_submix_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL -->
         <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>
@@ -223,8 +223,8 @@
 
     <!-- Volume section -->
 
-    <xi:include href="audio_policy_volumes.xml"/>
-    <xi:include href="default_volume_tables.xml"/>
+    <xi:include href="/vendor/etc/audio_policy_volumes.xml"/>
+    <xi:include href="/vendor/etc/default_volume_tables.xml"/>
 
     <!-- End of Volume section -->
 

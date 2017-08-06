@@ -4,7 +4,7 @@
 
 <acdb_ids>
 <!-- Output devices -->
-	<device name="SND_DEVICE_OUT_VOICE_HANDSET" acdb_id="7"/>
+	<device name="SND_DEVICE_OUT_VOICE_HANDSET" acdb_id="10"/>
 	<device name="SND_DEVICE_OUT_VOICE_HANDSET_TMUS" acdb_id="7"/>
 	<device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" acdb_id="7"/>
 	<device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="9"/>

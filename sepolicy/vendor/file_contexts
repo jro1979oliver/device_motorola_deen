@@ -108,3 +108,6 @@
 
 # Panel
 /(vendor|system/vendor)/bin/init\.oem\.panel\.sh        u:object_r:init-oem-panel-sh_exec:s0
+
+# tombstones
+/data/vendor/tombstones/rfs(/.*)?      u:object_r:rfs_tombstone_data_file:s0

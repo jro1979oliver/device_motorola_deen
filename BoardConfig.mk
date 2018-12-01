@@ -54,8 +54,6 @@ TARGET_KERNEL_CONFIG := deen_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 endif
 
-BOARD_USES_QCOM_HARDWARE := true
-
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -81,7 +79,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_NEW_ION_HEAP := true
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := out/target/product/$(PRODUCT_DEVICE)/system/lib64/android.hardware.boot@1.0.so
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 # MTP will not work until we update it to support ffs

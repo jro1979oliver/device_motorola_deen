@@ -40,6 +40,8 @@ TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dt.img
 
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci vmalloc=350M androidboot.selinux=permissive
+# For the love of all that is holy, please do not include this in your ROM unless you really want TWRP to not work correctly!
+BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
@@ -64,16 +66,23 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Crypto
+PLATFORM_SECURITY_PATCH := 2025-12-31
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 
 # TWRP
+AB_OTA_UPDATER := true
 RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TARGET_RECOVERY_FSTAB := device/motorola/deen/twrp.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_NEW_ION_HEAP := true
-TW_THEME := portrait_hdpi
+TW_RECOVERY_ADDITIONAL_RELINK_FILES := out/target/product/$(PRODUCT_DEVICE)/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
+TW_THEME := portrait_hdpi
+# MTP will not work until we update it to support ffs
+TW_EXCLUDE_MTP := true

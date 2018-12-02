@@ -76,10 +76,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_NEW_ION_HEAP := true
 TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
-# MTP will not work until we update it to support ffs
-TW_EXCLUDE_MTP := true

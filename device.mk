@@ -66,11 +66,6 @@ PRODUCT_PACKAGES += \
     bootctrl.msm8953 \
     bootctrl.msm8953.recovery
 
-# AAPT
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl_32 \

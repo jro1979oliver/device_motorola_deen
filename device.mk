@@ -353,7 +353,8 @@ PRODUCT_PACKAGES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libsensorndkbridge
 
 # Radio
 PRODUCT_PACKAGES += \

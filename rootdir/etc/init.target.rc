@@ -358,3 +358,12 @@ on boot
     chown system system /sys/class/leds/blue/breath
     chown system system /sys/class/leds/blue/delay_on
     chown system system /sys/class/leds/blue/delay_off
+
+service adjust_acdb_path /vendor/bin/init.mmi.acdb.sh
+    class core
+    user root
+    disabled
+    oneshot
+
+on early-boot
+   start adjust_acdb_path

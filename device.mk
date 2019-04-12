@@ -256,6 +256,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    init.mmi.acdb.sh \
     init.class_main.sh \
     init.oem.panel.sh \
     init.qcom.early_boot.sh \

@@ -119,3 +119,4 @@ TW_EXCLUDE_MTP := true
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := system/vendor
+TW_INCLUDE_REPACKTOOLS := true

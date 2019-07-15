@@ -77,6 +77,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.CDS=off \
     persist.camera.HAL3.enabled=1
 
+# Charger
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.charger.disable_init_blank=true
+
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2

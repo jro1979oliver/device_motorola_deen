@@ -83,7 +83,6 @@ vendor/lib/libchromaflash.so
 vendor/lib/libDepthBokehEffect.so
 vendor/lib/libDepthBokehEffect2.so
 vendor/lib/libflash_pmic.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libgralloc1.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so

@@ -971,6 +971,11 @@
 		<ctl name="IIR1 INP1 MUX" value="DEC1" />
 	</path>
 
+       <path name="unprocessed-mic">
+                <path name="handset-mic" />
+                <ctl name="ADC1 Volume" value="12" />
+       </path>
+
 	<path name="external-mic">
 		<path name="headset-mic" />
 	</path>

@@ -17,15 +17,14 @@ LOCAL_SRC_FILES:= \
 LOCAL_SHARED_LIBRARIES := \
     liblog \
     libhidlbase \
+    libhidltransport \
+    libhwbinder \
     libcutils \
     libutils \
     android.hardware.health@1.0 \
     android.hardware.health@2.0 \
     android.hardware.power@1.2 \
     libbase
-
-LOCAL_HEADER_LIBRARIES := \
-    libgps.utils_headers \
 
 LOCAL_STATIC_LIBRARIES := libhealthhalutils
 LOCAL_CFLAGS += -DBATTERY_LISTENER_ENABLED

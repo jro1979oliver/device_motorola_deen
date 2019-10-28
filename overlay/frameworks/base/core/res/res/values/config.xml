@@ -471,4 +471,8 @@
          snapshots are disabled, and snapshots will only be stored at config_highResTaskSnapshotScale
          -->
     <item name="config_lowResTaskSnapshotScale" format="float" type="dimen">0.3</item>
+
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
+    </string-array>
 </resources>

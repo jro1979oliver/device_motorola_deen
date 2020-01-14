@@ -124,6 +124,7 @@ ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.build.vendorprefix=/vendor
 ro.vendor.telephony.default_network=10,10
 ro.vendor.use_data_netmgrd=true
+ro.telephony.use_old_mnc_mcc_format=true
 
 # Sensors
 ro.hardware.sensors=deen
@@ -148,4 +149,3 @@ ro.surface_flinger.use_color_management=true
 
 # Wifi
 wifi.interface=wlan0
-

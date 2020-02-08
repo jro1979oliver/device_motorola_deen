@@ -10,8 +10,8 @@ vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
 # AptX
-lib64/libaptX_encoder.so
-lib64/libaptXHD_encoder.so
+system/lib64/libaptX_encoder.so
+system/lib64/libaptXHD_encoder.so
 
 # Audio
 vendor/lib/libacdb-fts.so
@@ -516,10 +516,10 @@ vendor/lib64/libets_fp_et5.so
 vendor/lib64/libets_teeclient.so
 
 # FM
-lib/fm_helium.so
-lib/libfm-hci.so
-lib64/fm_helium.so
-lib64/libfm-hci.so
+system/lib/fm_helium.so
+system/lib/libfm-hci.so
+system/lib64/fm_helium.so
+system/lib64/libfm-hci.so
 -product/lib/vendor.qti.hardware.fm@1.0.so
 -product/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/bin/fm_qsoc_patches
@@ -737,10 +737,10 @@ vendor/bin/charge_only_mode
 vendor/bin/hvdcp_opti
 
 # Perf
-lib/libqti_performance.so
-lib/libqti-perfd-client_system.so
-lib64/libqti_performance.so
-lib64/libqti-perfd-client_system.so
+system/lib/libqti_performance.so
+system/lib/libqti-perfd-client_system.so
+system/lib64/libqti_performance.so
+system/lib64/libqti-perfd-client_system.so
 vendor/bin/energy-awareness
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
@@ -763,10 +763,10 @@ vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 
 # Perf - IOP
-lib/libqti-iopd-client_system.so
-lib/libqti-util_system.so
-lib64/libqti-iopd-client_system.so
-lib64/libqti-util_system.so
+system/lib/libqti-iopd-client_system.so
+system/lib/libqti-util_system.so
+system/lib64/libqti-iopd-client_system.so
+system/lib64/libqti-util_system.so
 product/lib/vendor.qti.hardware.iop@1.0.so
 product/lib/vendor.qti.hardware.iop@2.0.so
 product/lib64/vendor.qti.hardware.iop@1.0.so

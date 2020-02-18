@@ -1,0 +1,151 @@
+#
+# vendor props for deen
+#
+
+# Audio
+af.fast_track_multiplier=1
+audio.deep_buffer.media=true
+audio.offload.video=false
+persist.vendor.audio.dualmic.config=endfire
+persist.vendor.audio.fluence.audiorec=false
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.voicecall=true
+persist.vendor.audio.fluence.voicecomm=true
+persist.vendor.audio.fluence.voicerec=false
+persist.vendor.audio.hw.binder.size_kbyte=1024
+persist.vendor.audio.ras.enabled=false
+ro.vendor.audio.sdk.fluencetype=none
+ro.vendor.audio.sdk.ssr=false
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
+vendor.audio.flac.sw.decoder.24bit=true
+vendor.audio.hw.aac.encoder=true
+vendor.audio.noisy.broadcast.delay=600
+vendor.audio.offload.buffer.size.kb=64
+vendor.audio.offload.gapless.enabled=false
+vendor.audio.offload.min.duration.secs=60
+vendor.audio.offload.multiaac.enable=true
+vendor.audio.offload.multiple.enabled=false
+vendor.audio.offload.passthrough=false
+vendor.audio.offload.pcm.16bit.enable=false
+vendor.audio.offload.pcm.24bit.enable=false
+vendor.audio.offload.pstimeout.secs=3
+vendor.audio.offload.track.enable=true
+vendor.audio.parser.ip.buffer.size=262144
+vendor.audio.safx.pbe.enabled=true
+vendor.audio.spkr_prot.tx.sampling_rate=48000
+vendor.audio.tunnel.encode=false
+vendor.audio.use.sw.alac.decoder=true
+vendor.audio.use.sw.ape.decoder=true
+vendor.audio_hal.period_size=240
+vendor.voice.path.for.pcm.voip=false
+
+# Audio - acdb props
+persist.vendor.audio.calfile0=/vendor/etc/acdbdata/common/Bluetooth_cal.acdb
+persist.vendor.audio.calfile1=/vendor/etc/acdbdata/common/General_cal.acdb
+persist.vendor.audio.calfile2=/vendor/etc/acdbdata/common/Global_cal.acdb
+persist.vendor.audio.calfile3=/vendor/etc/acdbdata/common/Handset_cal.acdb
+persist.vendor.audio.calfile4=/vendor/etc/acdbdata/common/Hdmi_cal.acdb
+persist.vendor.audio.calfile5=/vendor/etc/acdbdata/common/Headset_cal.acdb
+persist.vendor.audio.calfile6=/vendor/etc/acdbdata/common/Speaker_cal.acdb
+
+# Camera
+vendor.camera.aux.packageblacklist=com.discord
+vendor.camera.aux.packagelist=,com.android.camera2,com.google.android.GoogleCamera.cameralite
+vendor.camera.aux.packagelist2=com.android.camera,com.android.systemui,com.huaqin.cameraautotest,com.huaqin.runtime
+vendor.camera.aux.packagelist3=org.codeaurora.snapcam,org.lineageos.snap,com.google.android.GoogleCamera
+vendor.camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.instagram.android
+vendor.camera.lowpower.record.enable=1
+
+# Codec2 switch
+debug.media.codec2=2
+
+# Color Mode
+debug.sf.enable_gl_backpressure=1
+debug.sf.hw=1
+debug.sf.latch_unsignaled=0
+dev.pm.dyn_samplingrate=1
+ro.opengles.version=196610
+vendor.display.enable_default_color_mode=1
+vendor.gralloc.enable_fb_ubwc=1
+
+# DRM
+drm.service.enabled=true
+
+# Factory reset partition
+ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
+
+# Keystore
+ro.hardware.keystore_desede=true
+
+# OEM Unlock reporting
+ro.oem_unlock_supported=1
+
+# Radio
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+persist.vendor.cne.rat.wlan.chip.oem=WCN
+persist.vendor.data.mode=concurrent
+persist.vendor.qc.sub.rdump.max=3
+persist.vendor.qc.sub.rdump.on=1
+persist.vendor.radio.0x9e_not_callname=1
+persist.vendor.radio.add_power_save=1
+persist.vendor.radio.aosp_usr_pref_sel=true
+persist.vendor.radio.apm_sim_not_pwdn=1
+persist.vendor.radio.apn_delay=5000
+persist.vendor.radio.calls.on.ims=true
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.data_con_rprt=true
+persist.vendor.radio.dfr_mode_set=1
+persist.vendor.radio.domain.ps=0
+persist.vendor.radio.eri64_as_home=1
+persist.vendor.radio.fi_supported=1
+persist.vendor.radio.flexmap_type=none
+persist.vendor.radio.force_get_pref=1
+persist.vendor.radio.is_wps_enabled=true
+persist.vendor.radio.jbims=1
+persist.vendor.radio.msgtunnel.start=true
+persist.vendor.radio.mt_sms_ack=30
+persist.vendor.radio.mt_sms_ack=30
+persist.vendor.radio.no_wait_for_card=1
+persist.vendor.radio.oem_ind_to_both=0
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.qcril_uim_vcc_feature=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.relay_oprt_change=1
+persist.vendor.radio.sar_sensor=1
+persist.vendor.radio.sib16_support=1
+persist.vendor.radio.sw_mbn_update=1
+persist.vendor.sys.cnd.iwlan=1
+ro.telephony.call_ring.multiple=false
+ro.telephony.default_network=10,10
+ro.telephony.iwlan_operation_mode=legacy
+ro.vendor.build.vendorprefix=/vendor
+ro.vendor.telephony.default_network=10,10
+ro.vendor.use_data_netmgrd=true
+
+# Sensors
+ro.hardware.sensors=deen
+ro.vendor.sdk.sensors.gestures=false
+ro.vendor.sensors.amd=false
+ro.vendor.sensors.facing=false
+ro.vendor.sensors.mot_detect=true
+ro.vendor.sensors.mot_ltv=true
+ro.vendor.sensors.pedometer=false
+ro.vendor.sensors.pmd=false
+ro.vendor.sensors.rmd=false
+ro.vendor.sensors.scrn_ortn=false
+ro.vendor.sensors.smd=false
+ro.vendor.sensors.sta_detect=true
+
+# SurfaceFlinger
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.use_color_management=true
+
+# Wifi
+wifi.interface=wlan0
+

@@ -1,0 +1,46 @@
+#
+# system props for deen
+#
+
+# Audio
+use.voice.path.for.pcm.voip=false
+
+# Camera
+media.camera.ts.monotonic=1
+persist.camera.HAL3.enabled=1
+persist.vendor.camera.CDS=off
+ersist.vendor.camera.display.lmax=1280x720
+persist.vendor.camera.display.umax=1920x1080
+persist.vendor.camera.dual.camera=0
+persist.vendor.camera.eis.enable=1
+persist.vendor.camera.gyro.disable=0
+persist.vendor.camera.isp.clock.optmz=0
+persist.vendor.camera.stats.test=5
+persist.vendor.qti.telephony.vt_cam_interface=2
+vidc.enc.dcvs.extra-buff-count=2
+
+# Charger
+ro.charger.disable_init_blank=true
+
+# Color Mode
+ro.qualcomm.cabl=0
+
+# dex2oat64
+dalvik.vm.dex2oat64.enabled=true
+ro.sys.fw.dex2oat_thread_count=8
+
+# Display
+ro.sf.hwc_set_default_colormode=true
+
+# Radio
+DEVICE_PROVISIONED=1
+persist.vendor.cne.feature=1
+persist.vendor.dpm.feature=0
+ril.subscription.types=NV,RUIM
+telephony.lteOnCdmaDevice=1
+
+# Play store
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola

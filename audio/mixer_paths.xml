@@ -1035,7 +1035,11 @@
 	</path>
 
 	<path name="voice-rec-dmic-ef-fluence">
-		<path name="dmic-endfire" />
+		<path name="voice-dmic-ef" />
+	</path>
+
+	<path name="handset-stereo-dmic-ef">
+		<path name="speaker-dmic-endfire" />
 	</path>
 
 	<path name="handset-stereo-dmic-ef">

@@ -84,6 +84,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXTRA_LANGUAGES := true
+TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_FB2PNG := true
 
 # Recovery Installer

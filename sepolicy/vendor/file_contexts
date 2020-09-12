@@ -46,6 +46,7 @@
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 /dev/laser                                                    u:object_r:laser_device:s0
 
+/(vendor|system/vendor)/bin/hw/motorola\.hardware\.audio@2\.0-service                        u:object_r:hal_audio_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets   u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8953                u:object_r:hal_light_default_exec:s0
@@ -68,7 +69,8 @@
 /(mnt/vendor)/persist/egis(/.*)?                              u:object_r:fingerprint_data_file:s0
 /dev/esfp0                                                    u:object_r:tee_device:s0
 /data/\.fps(/.*)?                                             u:object_r:system_fps_data_file:s0
-/data/vendor/misc/cutback(/.*)?                               u:object_r:vendor_radio_data_file:s0
+/data/vendor/misc/cutback(/.*)?                               u:object_r:cutback_data_file:s0
+/dev/socket/cutback                                           u:object_r:cutback_socket:s0
 /data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0
 /data/vendor/fpc/socket                                       u:object_r:fingerprint_socket:s0
 /data/vendor/\.fps(/.*)?                                      u:object_r:fingerprint_data_file:s0

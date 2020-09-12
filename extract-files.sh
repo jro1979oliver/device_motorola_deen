@@ -77,4 +77,9 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" ${KANG} --section "${SECTION}"
 
+for i in $(grep -rn 'libhidltransport.so\|libhwbinder.so' ../../../vendor/motorola/deen/proprietary | awk '{print $3}'); do
+	patchelf --remove-needed "libhwbinder.so" "$i"
+	patchelf --remove-needed "libhidltransport.so" "$i"
+done
+
 "${MY_DIR}/setup-makefiles.sh"

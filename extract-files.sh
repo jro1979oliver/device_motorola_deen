@@ -61,6 +61,11 @@ function blob_fixup() {
         sed -i "s/libgui/libwui/" "${2}"
         ;;
 
+# memset shim
+    vendor/bin/charge_only_mode)
+        patchelf --add-needed libmemset_shim.so "${2}"
+        ;;
+
     vendor/lib64/libril-qc-hal-qmi.so)
         patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;

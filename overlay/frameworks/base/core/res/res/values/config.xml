@@ -324,6 +324,9 @@
         <item>"mobile_emergency,15,0,5,-1,true"</item>
     </string-array>
 
+   <!-- Configure wifi tcp buffersizes -->
+    <string name="config_wifi_tcp_buffers">131072,2621440,3145728,4096,2621440,3145728</string>
+
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
          If no value is found for the rat-name in use, the system default will be applied.

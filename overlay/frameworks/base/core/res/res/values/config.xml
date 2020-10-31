@@ -499,12 +499,12 @@
                 <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -200,0 L -200,62 L 200,62 L 200,0 Z</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -184,0 L -184,62 L 184,62 L 184,0 Z</string>
 
     <!-- Height of the status bar -->
     <dimen name="status_bar_height_portrait">62.0px</dimen>
     <dimen name="status_bar_height_landscape">24.0dp</dimen>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent">motog7power</string>
+    <string name="config_mms_user_agent">motorola one</string>
 </resources>

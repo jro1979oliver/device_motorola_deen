@@ -60,6 +60,15 @@ function blob_fixup() {
     vendor/lib/libmmcamera_vstab_module.so)
         sed -i "s/libgui/libwui/" "${2}"
         ;;
+
+    vendor/lib64/libril-qc-hal-qmi.so)
+        patchelf --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        ;;
+
+    vendor/lib64/libwvhidl.so)
+        patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        ;;
+
     esac
 }
 

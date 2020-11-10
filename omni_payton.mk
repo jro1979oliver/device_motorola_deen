@@ -59,10 +59,14 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
-# ROM fstab
-PRODUCT_COPY_FILES += \
-  device/motorola/payton/rootdir/root/fstab.qcom:root/fstab.qcom
+# Properties for decryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=sdm660 \
+    ro.hardware.gatekeeper=sdm660 \
+    ro.hardware.bootctrl=sdm660 \
+    ro.build.system_root_image=true
 
+# Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := payton
 PRODUCT_NAME := omni_payton
 PRODUCT_BRAND := motorola

@@ -81,6 +81,20 @@ function blob_fixup() {
 	vendor/bin/charge_only_mode)
 	    patchelf --add-needed libmemset_shim.so "${2}"
 	    ;;
+        # Move telephony to system_ext
+        system_ext/etc/permissions/qcrilhook.xml \
+        | system_ext/etc/permissions/telephonyservice.xml \
+        | system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
+        | system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml \
+        | system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml \
+        | system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml \
+        | system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml \
+            sed -i "s|/system/product/framework/|/system_ext/framework/|g" "${2}"
+            ;;
+        # Fix xml version
+        system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
+            sed -i 's/version="2.0"/version="1.0"/g' "${2}"
+            ;;
     esac
 }
 

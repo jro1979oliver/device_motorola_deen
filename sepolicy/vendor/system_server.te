@@ -24,3 +24,5 @@ allow system_server sysfs_healthd:file rw_file_perms;
 
 # rtc
 allow system_server sysfs_msm_subsys:file r_file_perms;
+
+allow system_server sysfs_battery_supply:file r_file_perms;

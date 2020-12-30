@@ -78,6 +78,11 @@ function blob_fixup() {
 
     vendor/lib64/libwvhidl.so)
         patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+
+        ;;
+    # Fix camera recording
+    vendor/lib/libmmcamera2_pproc_modules.so)
+        sed -i "s/ro.product.manufacturer/ro.product.nopefacturer/" "${2}"
         ;;
 
     esac

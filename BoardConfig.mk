@@ -180,6 +180,10 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 
+# Kernel
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
 # Declare boot header
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)

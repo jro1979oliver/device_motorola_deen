@@ -39,7 +39,9 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    bootctrl.msm8953
+    bootctrl.msm8953 \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service
 
 # Enable update engine sideloading by including the static version of the
 # boot_control HAL and its dependencies.

@@ -70,13 +70,25 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 55104748544 # 53813231 * 1024 mmcblk0p54
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# TWRP
+# TWRP Configuration
 AB_OTA_UPDATER := true
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_INCLUDE_CRYPTO := true
 TW_NEW_ION_HEAP := true
-TW_RECOVERY_ADDITIONAL_RELINK_FILES := ${OUT}/system/lib64/android.hardware.boot@1.0.so
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+	android.hardware.boot@1.0 \
+    libicuuc \
+    libxml2 \
+    libion \
+    android.hidl.base@1.0
+
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libicuuc.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT)/lib64/android.hidl.base@1.0.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.0.so

@@ -1,11 +1,13 @@
-/boot         emmc          /dev/block/bootdevice/by-name/boot           flags=slotselect
-/system       ext4          /dev/block/bootdevice/by-name/system         flags=slotselect
+/boot         emmc          /dev/block/bootdevice/by-name/boot           flags=slotselect;backup=1
+/system       ext4          /dev/block/bootdevice/by-name/system         flags=slotselect;backup=1
 /system_image emmc          /dev/block/bootdevice/by-name/system         flags=slotselect
 /vendor       ext4          /dev/block/bootdevice/by-name/vendor         flags=slotselect;display="Vendor";backup=1
 /vendor_image emmc          /dev/block/bootdevice/by-name/vendor         flags=slotselect
-/data         f2fs          /dev/block/bootdevice/by-name/userdata       flags=encryptable=/dev/block/bootdevice/by-name/metadata
-/firmware     ext4          /dev/block/bootdevice/by-name/modem          flags=slotselect
-/persist      ext4          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc
+/data         f2fs          /dev/block/bootdevice/by-name/userdata       flags=encryptable=/dev/block/bootdevice/by-name/metadata;backup=1
+/firmware     ext4          /dev/block/bootdevice/by-name/modem          flags=slotselect;display="Firmware";backup=1
+/persist      ext4          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;display="Persist"
+/persist      emmc          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;display="Persist";backup=1
+/logo         emmc          /dev/block/bootdevice/by-name/logo           flags=slotselect;display="Splash Image";backup=1;flashimg=1
 /misc         emmc          /dev/block/bootdevice/by-name/misc
 
 /external_sd  auto          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="MicroSD Card";storage;wipeingui;removable

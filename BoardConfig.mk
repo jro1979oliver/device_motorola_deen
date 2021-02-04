@@ -84,6 +84,10 @@ TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 
+# Recovery Installer
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := $(DEVICE_PATH)/installer
+
 # Debugging (trip the flag)
 ifeq ($(strip $(TW_DEBUG_BUILD)),)
 TARGET_USES_LOGD := true

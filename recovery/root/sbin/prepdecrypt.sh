@@ -1,61 +1,23 @@
 #!/sbin/sh
 
-relink()
-{
-	fname=$(basename "$1")
-	target="/sbin/$fname"
-	sed 's|/system/bin/linker64|///////sbin/linker64|' "$1" > "$target"
-	chmod 755 $target
-}
-
-finish()
-{
-	umount /v
-	umount /s
-	rmdir /v
-	rmdir /s
-	setprop crypto.ready 1
-	exit 0
-}
-
+tmp="/dev/tmp"
+tool="magiskboot"
 suffix=$(getprop ro.boot.slot_suffix)
-if [ -z "$suffix" ]; then
-	suf=$(getprop ro.boot.slot)
-	suffix="_$suf"
-fi
-
-venpath="/dev/block/bootdevice/by-name/vendor$suffix"
-mkdir /v
-mount -t ext4 -o ro "$venpath" /v
-syspath="/dev/block/bootdevice/by-name/system$suffix"
-mkdir /s
-mount -t ext4 -o ro "$syspath" /s
-
+bootpath="/dev/block/bootdevice/by-name/boot$suffix"
 is_fastboot_twrp=$(getprop ro.boot.fastboot)
-if [ ! -z "$is_fastboot_twrp" ]; then
-    # Be sure to increase the PLATFORM_VERSION in build/core/version_defaults.mk to override Google's anti-rollback features to something rather insane
-    osver=$(getprop ro.build.version.release_orig)
-    patchlevel=$(getprop ro.build.version.security_patch_orig)
-    setprop ro.build.version.release "$osver"
-    setprop ro.build.version.security_patch "$patchlevel"
-    finish
-fi
 
-if [ -f /s/system/build.prop ]; then
-    # TODO: It may be better to try to read these from the boot image than from /system
-    osver=$(grep -i 'ro.build.version.release' /s/system/build.prop  | cut -f2 -d'=')
-    patchlevel=$(grep -i 'ro.build.version.security_patch' /s/system/build.prop  | cut -f2 -d'=')
-    setprop ro.build.version.release "$osver"
-    setprop ro.build.version.security_patch "$patchlevel"
-    finish
-else
-    # Be sure to increase the PLATFORM_VERSION in build/core/version_defaults.mk to override Google's anti-rollback features to something rather insane
-    osver=$(getprop ro.build.version_orig)
-    patchlevel=$(getprop ro.build.version.security_patch_orig)
-    setprop ro.build.version.release "$osver"
-    setprop ro.build.version.security_patch "$patchlevel"
-    finish
-fi
+mkdir -p "$tmp" && cd "$tmp" && cp -f "/sbin/$tool" "$tmp" && chmod 755 "$tool"
+$tool unpack -h "$bootpath" # Unpack the boot image to the working directory
+# Read the needed values from the boot header
+osver=$(grep -i 'os_version=' "$tmp/header"  | cut -f2 -d'=' -s)
+patchlevel=$(grep -i 'os_patch_level=' "$tmp/header"  | cut -f2 -d'=' -s)
+patchlevel="$patchlevel-01" # Add "-01" at the end of $patchlevel because it's needed
+# Set the OS version and security patch level props to the values taken from the boot header to make decryption (in installed TWRP) work
+resetprop "ro.build.version.release" "$osver"
+resetprop "ro.build.version.security_patch" "$patchlevel"
+resetprop "ro.vendor.build.security_patch" "$patchlevel"
 
-finish
+$tool cleanup && cd "/" && rm -rf "$tmp" # Delete the working directory
+
+setprop crypto.ready 1 # Set crypto.ready to 1 so that the decryption services can start
 exit 0

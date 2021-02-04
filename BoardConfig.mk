@@ -85,6 +85,9 @@ TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_EXTRA_LANGUAGES := true
 
 # Recovery Installer
 USE_RECOVERY_INSTALLER := true

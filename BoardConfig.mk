@@ -45,22 +45,15 @@ TW_INCLUDE_CRYPTO_FBE := true
 TARGET_BOARD_PLATFORM := msm8953
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.hab.product=deen
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive androidboot.fastboot=1
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 LZMA_RAMDISK_TARGETS := recovery
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dt.img
-
-ifeq ($(strip $(TARGET_PREBUILT_KERNEL)),)
 TARGET_KERNEL_CONFIG := deen_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
-endif
 
 # Partitions
 

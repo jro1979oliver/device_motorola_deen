@@ -15,3 +15,5 @@ binder_call(system_server, hal_audio_default)
 get_prop(system_server, exported_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
+
+allow system_server sysfs_livedisplay_tuneable:file { read write };

@@ -205,6 +205,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ril.subscription.types=NV,RUIM \
     telephony.lteOnCdmaDevice=1
 
+# Recovery
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.recovery.ui.blank_unblank_on_init=true
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.sensors=deen \

@@ -1,11 +1,30 @@
 unix_socket_connect(hal_audio_default, perfd, perfd)
 
-r_dir_file(hal_audio_default, sysfs_adspd)
-allow hal_audio_default sysfs_adspd:file rw_file_perms;
+allow hal_audio_default persist_audio_file:dir rw_dir_perms;
+allow hal_audio_default persist_audio_file:file create_file_perms;
+allow hal_audio_default sysfs:dir { open read };
+allow hal_audio_default hal_dms_default:binder { transfer call };
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
 
-get_prop(vendor_init, vendor_aov_prop)
-set_prop(vendor_init, vendor_aov_prop)
+allow hal_audio_server adspd_device:chr_file rw_file_perms;
+allow hal_audio_server audio_device:chr_file rw_file_perms;
+allow hal_audio_server sysfs_adspd:dir r_dir_perms;
+allow hal_audio_server sysfs_adspd:file rw_file_perms;
 
-unix_socket_connect(hal_audio_default, property, init)
-allow hal_audio_default self:binder { call transfer };
-allow hal_audio_default self:fd use;
+binder_call(hal_audio_default, hal_audio_server)
+binder_call(hal_audio_server, hal_audio_default)
+
+r_dir_file(hal_audio_server, sysfs_sectouch)
+r_dir_file(hal_audio_server, sysfs_sensor)
+
+set_prop(hal_audio_server, vendor_aov_prop)
+
+# MotSpeakerHelperProximity
+allow hal_audio_default fwk_sensor_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, system_server)
+
+# Speaker Calibration
+r_dir_file(hal_audio_default, mnt_vendor_file)
+
+#stop spam
+dontaudit hal_audio_default audio_prop:file r_file_perms;

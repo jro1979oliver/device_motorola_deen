@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_motorola_sdm632",
-    "target_path": "kernel/motorola/sdm632"
+    "repository": "android_kernel_motorola_deen",
+    "target_path": "kernel/motorola/deen"
   },
   {
     "repository": "android_external_bson",

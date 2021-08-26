@@ -15,9 +15,9 @@
 //
 
 cc_library_static {
-    name: "libinit_sdm632",
+    name: "libinit_deen",
     recovery_available: true,
-    srcs: ["init_sdm632.cpp"],
+    srcs: ["init_deen.cpp"],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"

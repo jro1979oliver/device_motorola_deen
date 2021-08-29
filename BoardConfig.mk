@@ -86,7 +86,7 @@ TW_THEME := portrait_hdpi
 
 # Recovery Installer
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := $(DEVICE_PATH)/installer
+RECOVERY_INSTALLER_PATH := bootable/recovery/installer
 
 # Debugging (trip the flag)
 ifeq ($(strip $(TW_DEBUG_BUILD)),)

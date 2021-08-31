@@ -732,9 +732,6 @@ vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 
-# Misc - from V12.1.2.0.RJKCNXM
-vendor/lib/libgui_vendor.so|131ca346cba389d95a366649134730794fb1966b
-
 # NFC
 vendor/lib64/libpn553_fw.so
 

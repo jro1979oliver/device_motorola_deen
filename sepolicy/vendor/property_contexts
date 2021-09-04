@@ -67,6 +67,7 @@ persist.camera.log3a		u:object_r:camera_prop:s0
 persist.camera.mot.readout		u:object_r:camera_prop:s0
 persist.camera.motexp_update		u:object_r:camera_prop:s0
 persist.camera.tint_strength		u:object_r:camera_prop:s0
+persist.camera.gyro.disable             u:object_r:camera_prop:s0
 persist.debug.sf.showfps		u:object_r:camera_prop:s0
 persist.enable.max.pending.buf		u:object_r:camera_prop:s0
 persist.partial.skip		u:object_r:camera_prop:s0

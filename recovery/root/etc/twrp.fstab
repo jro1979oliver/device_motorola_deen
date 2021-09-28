@@ -1,10 +1,11 @@
 /boot         emmc          /dev/block/bootdevice/by-name/boot           flags=slotselect;backup=1
 /system       ext4          /dev/block/bootdevice/by-name/system         flags=slotselect;backup=1
 /system_image emmc          /dev/block/bootdevice/by-name/system         flags=slotselect
-/vendor       ext4          /dev/block/bootdevice/by-name/vendor         flags=slotselect;display="Vendor";backup=1
-/vendor_image emmc          /dev/block/bootdevice/by-name/vendor         flags=slotselect
+/vendor       ext4          /dev/block/bootdevice/by-name/vendor         flags=backup=1;display="Vendor";slotselect;wipeingui
+/vendor_image emmc          /dev/block/bootdevice/by-name/vendor         flags=backup=1;slotselect
 /data         f2fs          /dev/block/bootdevice/by-name/userdata       flags=encryptable=/dev/block/bootdevice/by-name/metadata;backup=1
 /firmware     ext4          /dev/block/bootdevice/by-name/modem          flags=slotselect;display="Firmware";backup=1
+/oem          ext4          /dev/block/bootdevice/by-name/oem            flags=backup=1;display="Oem";slotselect;wipeingui
 /persist      ext4          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;display="Persist"
 /persist      emmc          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;display="Persist";backup=1
 /logo         emmc          /dev/block/bootdevice/by-name/logo           flags=slotselect;display="Splash Image";backup=1;flashimg=1

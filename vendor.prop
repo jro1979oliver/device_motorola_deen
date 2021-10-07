@@ -148,6 +148,10 @@ ro.vendor.sensors.scrn_ortn=false
 ro.vendor.sensors.smd=false
 ro.vendor.sensors.sta_detect=true
 
+# SOC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8953
+
 # SurfaceFlinger
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_wide_color_display=true

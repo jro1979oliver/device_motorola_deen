@@ -301,6 +301,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions
 
+# netmgrd
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
 # Network
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0

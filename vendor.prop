@@ -102,6 +102,7 @@ persist.vendor.lte.pco_supported=true
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
+persist.sys.fflag.override.settings_provider_model=false
 persist.vendor.cne.rat.wlan.chip.oem=WCN
 persist.vendor.data.mode=concurrent
 persist.vendor.qc.sub.rdump.max=3

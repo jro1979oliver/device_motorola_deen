@@ -28,6 +28,9 @@ ro.charger.disable_init_blank=true
 # Color Mode
 ro.qualcomm.cabl=0
 
+# Cutout
+ro.support_hide_display_cutout=true
+
 # dex2oat64
 dalvik.vm.dex2oat64.enabled=true
 ro.sys.fw.dex2oat_thread_count=8

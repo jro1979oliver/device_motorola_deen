@@ -65,6 +65,7 @@ vendor.gralloc.enable_fb_ubwc=1
 
 # Display
 debug.renderengine.backend=threaded
+vendor.display.use_smooth_motion=1 
 
 # Dolby
 persist.vendor.audio_fx.current=dolby

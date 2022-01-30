@@ -133,8 +133,12 @@ PRODUCT_PACKAGES += \
     libbson.vendor \
     libxml2 \
     libwui \
-    Snap \
-    vendor.qti.hardware.camera.device@1.0:64
+    vendor.qti.hardware.camera.device@1.0:64 \
+    GoogleCameraGoPrebuilt
+
+# QTI Permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml     
 
 # Codec2 modules
 PRODUCT_PACKAGES += \

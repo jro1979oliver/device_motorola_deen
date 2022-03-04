@@ -73,7 +73,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl_32 \
     android.hardware.soundtrigger@2.1-impl_32 \
     android.hardware.soundtrigger@2.1-service \
-    audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     audiod \

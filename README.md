@@ -1,28 +1,12 @@
 # TWRP Device configuration for Motorola Moto X4 (payton)
 
 Copyright 2018 - The OmniROM Project
+Copyright 2022 - The TeamWin Recovery Project
 
 For building TWRP for Motorola Moto X4 ONLY.
 
 ### Kernel Source
 Check here: https://github.com/ixmoe/android_kernel_motorola_sdm630
-
-### Build with TWRP installer
-To auotomatically make the twrp installer,
-you need to import this commit in the build path
-
-```sh
-https://gerrit.omnirom.org/#/c/android_build/+/33182/
-```
-### How to compile
-
-```sh
-. build/envsetup.sh
-export ALLOW_MISSING_DEPENDENCIES=true
-export LC_ALL=C
-lunch omni_payton-eng
-mka adbd recoveryimage
-```
 
 ### Device specifications
 =====================================
@@ -44,3 +28,43 @@ Front Camera | 8 MP
 <p align="center">
 <img height="600" src="https://i.imgur.com/pEEUbfS.png" title="Motorola Moto X4 (payton)"/>
 </p>
+
+## Compile
+
+First repo init the twrp-11 tree (and necessary qcom dependencies):
+
+```
+mkdir ~/android/twrp-11
+cd ~/android/twrp-11
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+mkdir -p .repo/local_manifests
+curl https://raw.githubusercontent.com/TeamWin/buildtree_manifests/master/min-aosp-11/qcom.xml > .repo/local_manifests/qcom.xml
+```
+
+Then add to a local manifest (if you don't have .repo/local_manifest then make that directory and make a blank file and name it something like twrp.xml):
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="osm0sis/twrp_abtemplate" path="bootable/recovery/installer" remote="github" revision="master"/>
+  <project name="android_device_motorola_payton" path="device/motorola/payton" remote="TeamWin" revision="android-11"/>
+</manifest>
+```
+
+Now you can sync your source:
+
+```
+repo sync
+```
+
+To automatically make the TWRP installer zip, you need to import this commit in the build/make path: https://gerrit.twrp.me/c/android_build/+/4964
+
+Finally execute these:
+
+```
+. build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
+export LC_ALL=C
+lunch twrp_payton-eng
+make adbd bootimage
+```

@@ -68,9 +68,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio.effect@5.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio.effect@6.0-impl \
     audio.a2dp.default \
     audio.primary.msm8953 \
     audio.r_submix.default \

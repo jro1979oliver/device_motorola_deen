@@ -6,7 +6,7 @@ Copyright 2022 - The TeamWin Recovery Project
 For building TWRP for Motorola Moto X4 ONLY.
 
 ### Kernel Source
-Check here: https://github.com/ixmoe/android_kernel_motorola_sdm630
+https://github.com/moto-SDM660/android_kernel_motorola_sdm660/tree/twrp-11
 
 ### Device specifications
 =====================================

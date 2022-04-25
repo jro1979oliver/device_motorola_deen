@@ -27,30 +27,6 @@ $(call inherit-product, vendor/lineage/config/lineage_audio.mk)
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# A/B updater
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
-
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-# The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
-
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.recovery \
-    bootctrl.msm8953 \
-    bootctrl.msm8953.recovery
-
 # Device Identifiers
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := deen

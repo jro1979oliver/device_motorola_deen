@@ -1075,7 +1075,6 @@ vendor/etc/init/init.time_daemon.rc
 
 # Wi-Fi
 vendor/bin/cnss-daemon
-vendor/bin/wcnss_service
 
 # Wi-Fi - Firmware
 vendor/etc/motorola/mdmctbk/ctbk_cfg.xml

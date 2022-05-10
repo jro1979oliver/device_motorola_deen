@@ -82,7 +82,7 @@ ro.vendor.fm.use_audio_session=true
 
 # Graphics
 ro.hardware.egl=adreno
-ro.hardware.vulkan=adreno
+ro.hardware.vulkan=msm8953
 
 # Keystore
 ro.hardware.keystore_desede=true

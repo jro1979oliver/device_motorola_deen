@@ -1,10 +1,8 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
- *
+ * Copyright (C) 2017-2022 The LineageOS Project
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -13,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #ifndef ANDROID_HARDWARE_LIGHT_V2_0_LIGHT_H
 #define ANDROID_HARDWARE_LIGHT_V2_0_LIGHT_H
 
@@ -37,14 +36,14 @@ using ::android::hardware::light::V2_0::Status;
 using ::android::hardware::light::V2_0::Type;
 
 class Light : public ILight {
-   public:
-    Light();
+    public:
+        Light();
 
-    Return<Status> setLight(Type type, const LightState& state) override;
-    Return<void> getSupportedTypes(getSupportedTypes_cb _hidl_cb) override;
+        Return<Status> setLight(Type type, const LightState& state) override;
+        Return<void> getSupportedTypes(getSupportedTypes_cb _hidl_cb) override;
 
-   private:
-    std::mutex globalLock;
+    private:
+        std::mutex globalLock;
 };
 
 }  // namespace implementation

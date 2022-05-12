@@ -1,10 +1,8 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
- *
+ * Copyright (C) 2017-2022 The LineageOS Project
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -14,13 +12,11 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "LightService"
+#define LOG_TAG "android.hardware.light@2.0-service.msm8953"
 
 #include <log/log.h>
-
-#include "Light.h"
-
 #include <fstream>
+#include "Light.h"
 
 namespace android {
 namespace hardware {
@@ -28,80 +24,66 @@ namespace light {
 namespace V2_0 {
 namespace implementation {
 
-#define LEDS            "/sys/class/leds/"
-
-#define LCD_LED         LEDS "lcd-backlight/"
-#define CHARGING_LED    LEDS "charging/"
-
-#define BRIGHTNESS      "brightness"
-#define BREATH          "breath"
-#define DELAY_OFF       "delay_off"
-#define DELAY_ON        "delay_on"
+#define LEDS                       "/sys/class/leds/"
+#define LCD_LED                    LEDS "lcd-backlight/"
+#define BRIGHTNESS                 "brightness"
+#define WHITE                      LEDS "white/"
 
 /*
  * Write value to path and close file.
  */
 static void set(std::string path, std::string value) {
     std::ofstream file(path);
-
-    if (!file.is_open()) {
+    /* Only write brightness value if stream is open, alive & well */
+    if (file.is_open()) {
+        file << value;
+    } else {
+        /* Fire a warning a bail out */
         ALOGE("failed to write %s to %s", value.c_str(), path.c_str());
         return;
     }
-
-    file << value;
 }
 
 static void set(std::string path, int value) {
     set(path, std::to_string(value));
 }
-    
-static uint32_t rgbToBrightness(const LightState& state) {
-    uint32_t color = state.color & 0x00ffffff;
-    return ((77 * ((color >> 16) & 0xff)) + (150 * ((color >> 8) & 0xff)) +
-            (29 * (color & 0xff))) >> 8;
+
+static inline bool isLit(const LightState& state) {
+    return state.color & 0x00ffffff;
 }
 
-static void handleBacklight(const LightState& state) {
-    uint32_t brightness = rgbToBrightness(state);
+/*
+ * Device specific methods
+ */
+static void Backlight(const LightState& state) {
+    uint32_t brightness = state.color & 0xFF;
     set(LCD_LED BRIGHTNESS, brightness);
 }
 
-static void handleNotification(const LightState& state) {
-    uint32_t alpha, brightness;
+static inline void Led(const LightState& state, uint32_t pattern) {
+    isLit(state) ? set(WHITE BRIGHTNESS, pattern) : set(WHITE BRIGHTNESS, 0);
+}
 
-    /*
-     * Extract brightness from AARRGGBB.
-     */
-    alpha = (state.color >> 24) & 0xFF;
-    brightness = rgbToBrightness(state);
+static void Notification(const LightState& state) {
+    /* Fast blink */
+    Led(state, 1);
+}
 
-    /*
-     * Scale brightness if the Alpha brightness is not 0xFF.
-     */
-    if (alpha != 0xFF)
-        brightness = (brightness * alpha) / 0xFF;
-    
-    /* Disable blinking. */
-    set(CHARGING_LED BREATH, 0);
+static void Attention(const LightState& state) {
+    /* Slow blink */
+    Led(state, 2);
+}
 
-    if (state.flashMode == Flash::TIMED) {
-        /* Set LED */
-        set(CHARGING_LED DELAY_OFF, state.flashOffMs);
-        set(CHARGING_LED DELAY_ON, state.flashOnMs);
-
-        /* Enable blinking. */
-        set(CHARGING_LED BREATH, 1);
-    } else {
-        set(CHARGING_LED BRIGHTNESS, brightness);
-    }
+static void ChargingNotification(const LightState& state) {
+    /* Steady Led */
+    Led(state, 3);
 }
 
 static std::map<Type, std::function<void(const LightState&)>> lights = {
-    {Type::BACKLIGHT, handleBacklight},
-    {Type::BATTERY, handleNotification},
-    {Type::NOTIFICATIONS, handleNotification},
-    {Type::ATTENTION, handleNotification},
+    {Type::BACKLIGHT, Backlight},
+    {Type::NOTIFICATIONS, Notification},
+    {Type::BATTERY, ChargingNotification},
+    {Type::ATTENTION, Attention},
 };
 
 Light::Light() {}
@@ -116,10 +98,9 @@ Return<Status> Light::setLight(Type type, const LightState& state) {
     /*
      * Lock global mutex until light state is updated.
      */
+
     std::lock_guard<std::mutex> lock(globalLock);
-
     it->second(state);
-
     return Status::SUCCESS;
 }
 
@@ -132,9 +113,9 @@ Return<void> Light::getSupportedTypes(getSupportedTypes_cb _hidl_cb) {
 
     return Void();
 }
-
-}  // namespace implementation
-}  // namespace V2_0
-}  // namespace light
-}  // namespace hardware
-}  // namespace android
+/* Close all the namespaces */
+}
+}
+}
+}
+}

@@ -5,6 +5,7 @@ init_daemon_domain(init-oem-panel-sh)
 
 allow init-oem-panel-sh vendor_shell_exec:file rx_file_perms;
 allow init-oem-panel-sh vendor_toolbox_exec:file rx_file_perms;
+allow init-oem-panel-sh sysfs:file { open read };
 
 # execute grep
 allow init-oem-panel-sh vendor_file:file rx_file_perms;

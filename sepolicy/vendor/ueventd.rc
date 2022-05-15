@@ -1,0 +1,1 @@
+allow ueventd block_device:blk_file { open read };

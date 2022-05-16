@@ -32,7 +32,7 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := deen
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_NAME := lineage_deen
-PRODUCT_MODEL := deen
+PRODUCT_MODEL := motorola one
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 

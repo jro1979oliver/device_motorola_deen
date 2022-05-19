@@ -228,7 +228,6 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.mmi.usb.sh \
     init.oem.panel.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \

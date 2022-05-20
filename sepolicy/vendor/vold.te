@@ -3,3 +3,4 @@ allow vold system_data_file:file { ioctl open };
 
 # For setting read_ahead_kb
 allow vold sysfs_mmc_host:file create_file_perms;
+allow vold rootfs:dir { add_name create setattr write };

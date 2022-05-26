@@ -3,3 +3,6 @@ type moto_boot_prop, property_type;
 type vendor_aov_prop, property_type;
 type vendor_dolby_loglevel_prop, property_type;
 type hwrev_prop, property_type;
+
+# wlan-vendor prop
+type vendor_wifi_prop, property_type;

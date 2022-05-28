@@ -3,6 +3,8 @@
 #
 
 # Audio
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 audio.offload.disable=false
 ro.qc.sdk.audio.fluencetype=none
 ro.qc.sdk.audio.ssr=false
@@ -15,6 +17,7 @@ ro.qualcomm.bt.hci_transport=smd
 vidc.enc.dcvs.extra-buff-count=2
 
 # Radio
+persist.vendor.qti.telephony.vt_cam_interface=2
 persist.data.netmgrd.qos.enable=true
 persist.data.qmi.adb_logmask=0
 persist.net.doxlat=true

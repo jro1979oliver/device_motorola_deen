@@ -1,0 +1,2 @@
+allow storaged debugfs_mmc:dir search;
+allow storaged debugfs_mmc:file read;

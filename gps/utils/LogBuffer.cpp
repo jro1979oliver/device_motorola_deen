@@ -30,8 +30,6 @@
 #include "LogBuffer.h"
 #include <utils/Log.h>
 
-#define LOG_TAG "LocSvc_LogBuffer"
-
 namespace loc_util {
 
 LogBuffer* LogBuffer::mInstance;

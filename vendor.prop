@@ -78,6 +78,13 @@ drm.service.enabled=true
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
 
+# Dolby
+persist.vendor.audio_fx.current=dolby
+ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
+
+# media
+debug.stagefright.omx_default_rank.sw-audio=16
+
 # Graphics
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno

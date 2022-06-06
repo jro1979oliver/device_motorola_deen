@@ -169,7 +169,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 
 # Display
-TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 280
 
 # Kernel
 TARGET_KERNEL_ADDITIONAL_FLAGS := \

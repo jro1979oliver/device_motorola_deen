@@ -36,4 +36,8 @@ PRODUCT_MODEL := motorola one
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
-BUILD_FINGERPRINT := motorola/deen_sprout:10/QPK30.51/bffa2:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=deen \
+    PRIVATE_BUILD_DESC="deen-user 10 QPKS30.54-22-27 92b8a release-keys"
+
+BUILD_FINGERPRINT := motorola/deen/deen_sprout:10/QPKS30.54-22-27/92b8a:user/release-keys

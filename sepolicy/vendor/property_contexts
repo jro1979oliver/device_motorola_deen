@@ -42,7 +42,7 @@ gpu.stats.debug.level      u:object_r:vendor_display_prop:s0
 
 persist.vendor.dolby.loglevel   u:object_r:vendor_dolby_loglevel_prop:s0
 
-wifi.active.interface      u:object_r:exported_wifi_prop:s0
+wifi.active.interface      u:object_r:wifi_hal_prop:s0
 
 # Camera
 camera.cpp.dumppreviewpayload		u:object_r:camera_prop:s0

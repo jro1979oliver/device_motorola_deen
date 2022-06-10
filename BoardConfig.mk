@@ -69,13 +69,14 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 TARGET_OTA_ASSERT_DEVICE := deen,deen_sprout
-USE_COMMON_BOOTCTRL := true
 
 # TWRP Configuration
+BOARD_USES_QCOM_DECRYPTION := true
 TW_USE_TOOLBOX := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
@@ -95,22 +96,3 @@ ifeq ($(strip $(TW_DEBUG_BUILD)),)
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 endif
-
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.boot@1.0 \
-    libicuuc \
-    libxml2 \
-    libion \
-    android.hidl.base@1.0
-
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libicuuc.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT)/lib64/android.hidl.base@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.0.so
-
-# Vendor
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_PRODUCT := product

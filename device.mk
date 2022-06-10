@@ -16,7 +16,8 @@
 
 AB_OTA_PARTITIONS += \
     boot \
-    system
+    system \
+    vendor
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -50,3 +51,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libgptutils \
     libz \
     libcutils
+
+PRODUCT_PACKAGES += \
+    qcom_decrypt

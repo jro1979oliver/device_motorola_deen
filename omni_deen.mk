@@ -27,8 +27,8 @@ $(call inherit-product, device/motorola/deen/device.mk)
 TARGET_BOARD_PLATFORM := msm8953
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.keystore=$(TARGET_BOARD_PLATFORM) \
-    ro.hardware.bootctrl=$(TARGET_BOARD_PLATFORM) \
+    ro.hardware.keystore=msm8983 \
+    ro.hardware.bootctrl=msm8953 \
     ro.vendor.build.security_patch=2099-12-31 \
 
 # Device identifier. This must come after all inclusions

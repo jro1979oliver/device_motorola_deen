@@ -1,4 +1,4 @@
-import /init.recovery.qcom.usb.rc
+import /init.mmi.usb.rc
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}

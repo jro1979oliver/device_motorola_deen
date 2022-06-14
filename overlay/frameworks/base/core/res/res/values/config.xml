@@ -494,9 +494,6 @@
          battery LEDs would set this config to 11. -->
     <integer name="config_deviceLightCapabilities" translatable="false">248</integer>
 
-    <!-- Should we filter any display modes which are unampped? -->
-    <bool name="config_filterDisplayModes">true</bool>
-    
     <!-- Whether device has a screen with a higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
@@ -505,4 +502,13 @@
          1: 2 button mode (back, home buttons + swipe up for overview)
          2: gestures only for back, home and overview -->
     <integer name="config_navBarInteractionMode">2</integer>
+
+    <!-- Enable LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
+    <!-- Turn on LiveDisplay auto mode by default -->
+    <integer name="config_defaultLiveDisplayMode">0</integer>
+
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">true</bool>
 </resources>

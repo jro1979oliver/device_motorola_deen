@@ -16,7 +16,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_payton.mk
+    $(LOCAL_DIR)/twrp_deen.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_payton-eng
+    twrp_deen-eng

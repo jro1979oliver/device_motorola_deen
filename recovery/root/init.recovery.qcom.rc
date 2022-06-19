@@ -28,11 +28,8 @@
 import /init.recovery.qcom_decrypt.rc
 
 on fs
-    wait /dev/block/platform/soc/c0c4000.sdhci
-    symlink /dev/block/platform/soc/c0c4000.sdhci /dev/block/bootdevice
-    symlink /dev/block/bootdevice/by-name/oem_b /dev/block/bootdevice/by-name/vendor_b
-    symlink /dev/block/bootdevice/by-name/oem_a /dev/block/bootdevice/by-name/vendor_a
-    symlink /dev/block/bootdevice/by-name/oem /dev/block/bootdevice/by-name/vendor
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     start boot-hal-1-0
 
 on boot
@@ -41,4 +38,5 @@ on boot
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor interactive
-
+    start qseecomd
+    start keymaster-3-0

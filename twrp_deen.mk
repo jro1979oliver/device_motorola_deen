@@ -1,7 +1,7 @@
 # Only the below variable(s) need to be changed!
 #
 # Define hardware platform
-PRODUCT_PLATFORM := sdm660
+PRODUCT_PLATFORM := msm8953
 
 # The below variables will be generated automatically
 #

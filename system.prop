@@ -1,3 +1,3 @@
-ro.display.series=Motorola Moto x4
-ro.product.board=sdm660
-ro.board.platform=sdm660
+ro.display.series=Motorola moto one
+ro.product.board=msm8953
+ro.board.platform=msm8953

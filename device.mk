@@ -46,12 +46,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # qcom standard decryption
 PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
-
-# Resolution
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+    qcom_decrypt
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -75,12 +70,12 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overrides
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=payton \
+    PRODUCT_DEVICE=deen \
     PRODUCT_NAME=$(PRODUCT_RELEASE_NAME) \
-    TARGET_DEVICE=payton
+    TARGET_DEVICE=deen
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.product=payton
+    ro.build.product=deen
 
 # Blacklist
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
@@ -89,3 +84,8 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0 \
+    android.hardware.keymaster@4.0-service

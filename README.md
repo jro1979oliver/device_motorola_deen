@@ -1,33 +1,28 @@
-# TWRP Device configuration for Motorola Moto X4 (payton)
-
-Copyright 2018 - The OmniROM Project
 Copyright 2022 - The TeamWin Recovery Project
 
-For building TWRP for Motorola Moto X4 ONLY.
+TWRP Device Tree for Motorola One (Deen)
+===========================================
 
-### Kernel Source
-https://github.com/moto-SDM660/android_kernel_motorola_sdm660/tree/twrp-11
-
-### Device specifications
-=====================================
+The Motorola Motorola One (codenamed _"deen"_) is a mid-range smartphone from Motorola mobility.
+It was announced on August 2018.
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-CPU     | Octa-core (8x2.21 GHz Cortex A53)
-CHIPSET | Qualcomm SDM630 Snapdragon 630
-GPU     | Adreno 508
-Memory  | 3, 4, 6 GB
-Shipped Android Version | 7.1.1 (Nougat)
-Storage | 32, 64GB
-Battery | 3000 mAh
-Dimensions | 148.4 x 73.4 x 8 mm
-Display | 1080 x 1920 pixels, 5.2" LTPS IPS LCD
-Rear Camera  | Dual 12 MP
-Front Camera | 8 MP
+CPU     | Octa-core 2.0 GHz Cortex-A53
+Chipset | Qualcomm MSM8953-PRO Snapdragon 625
+GPU     | Adreno 506
+Memory  | 4 GB RAM
+Shipped Android Version | 8.1.0
+Storage | 64 GB
+MicroSD | Up to 256 GB
+Battery | Li-Ion 3000mAh battery
+Display | 720 x 1520 pixels, 5.9 inches (~287 ppi pixel density)
+Camera  | 13 MP, 2160 pixels, panorama,depth sensor, PDAF ,flash LED
 
-<p align="center">
-<img height="600" src="https://i.imgur.com/pEEUbfS.png" title="Motorola Moto X4 (payton)"/>
-</p>
+![Motorola One](https://cdn2.gsmarena.com/vv/pics/motorola/motorola-one-02.jpg "Motorola One")
+### Kernel Source
+
+https://github.com/jro1979oliver/kernel_motorola_deen/tree/android-11
 
 ## Compile
 
@@ -47,7 +42,7 @@ Then add to a local manifest (if you don't have .repo/local_manifest then make t
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="osm0sis/twrp_abtemplate" path="bootable/recovery/installer" remote="github" revision="master"/>
-  <project name="android_device_motorola_payton" path="device/motorola/payton" remote="TeamWin" revision="android-11"/>
+  <project name="android_device_motorola_deen" path="device/motorola/deen" remote="jro1979oliver" revision="android-11"/>
 </manifest>
 ```
 
@@ -65,6 +60,6 @@ Finally execute these:
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch twrp_payton-eng
+lunch twrp_deen-eng
 make adbd bootimage
 ```

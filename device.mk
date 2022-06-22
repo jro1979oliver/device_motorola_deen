@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-# A/B updater
+# AB
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -44,18 +44,12 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
+    otapreopt_script
 
-# The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
-
-# Boot control HAL
+# Boot control
 PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
     android.hardware.boot@1.0-impl.recovery \
     bootctrl.msm8953 \
     bootctrl.msm8953.recovery
@@ -470,6 +464,15 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
+
+# Update engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 # Vibrator
 PRODUCT_PACKAGES += \

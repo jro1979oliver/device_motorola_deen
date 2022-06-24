@@ -32,6 +32,9 @@ ro.sys.fw.dex2oat_thread_count=8
 # Display
 ro.sf.hwc_set_default_colormode=true
 
+# Ebpf
+ro.kernel.ebpf.supported=false
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.vendor.cne.feature=1

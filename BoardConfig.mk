@@ -61,7 +61,6 @@ BOARD_KERNEL_CMDLINE :=  \
     androidboot.hab.product=deen \
     androidboot.selinux=permissive \
     androidboot.fastboot=1
-LZMA_RAMDISK_TARGETS := recovery
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)

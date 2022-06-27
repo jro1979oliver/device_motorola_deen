@@ -72,14 +72,17 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.service \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@4.0-impl_32 \
+    android.hardware.audio.service_32 \
+    android.hardware.audio@4.0-impl_32 \
+    android.hardware.soundtrigger@2.1-impl_32 \
+    android.hardware.soundtrigger@2.1-service \
     audio.a2dp.default \
-    audio.primary.msm8953 \
     audio.r_submix.default \
     audio.usb.default \
+    audiod \
     libaacwrapper \
+    libaudio-resampler \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -111,7 +114,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     android.hardware.bluetooth@1.0.vendor \
     audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
     libbt-vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.fm@1.0.vendor
@@ -261,6 +264,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qti.qseecomd.sh \
     init.hidl.sensor.rc \
+    init.mmi.acdb.sh \
     init.mmi.chipset.rc \
     init.mmi.overlay.rc \
     init.mmi.usb.rc \

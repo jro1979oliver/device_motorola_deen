@@ -2,6 +2,9 @@
 # system props for deen
 #
 
+#ADB
+ro.adb.secure.recovery=0
+
 # Audio
 use.voice.path.for.pcm.voip=false
 

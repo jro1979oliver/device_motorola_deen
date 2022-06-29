@@ -1,3 +1,4 @@
+allow hal_power_default system_app:file read;
 r_dir_file(hal_power_default, debugfs_wlan)
 r_dir_file(hal_power_default, sysfs_graphics)
 r_dir_file(hal_power_default, sysfs_input)

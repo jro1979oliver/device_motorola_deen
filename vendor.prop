@@ -63,18 +63,19 @@ ro.opengles.version=196610
 vendor.display.enable_default_color_mode=1
 vendor.gralloc.enable_fb_ubwc=1
 
+# Dolby
+persist.vendor.audio_fx.current=dolby
+ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
+
 # DRM
 drm.service.enabled=true
 
 # Factory reset partition
 ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
 
-# Dolby
-persist.vendor.audio_fx.current=dolby
-ro.vendor.dolby.dax.version=DS1_2.2.0.0_r1
-
-# media
-debug.stagefright.omx_default_rank.sw-audio=16
+# FM
+ro.fm.transmitter=false
+ro.vendor.fm.use_audio_session=true
 
 # Graphics
 ro.hardware.egl=adreno
@@ -82,6 +83,9 @@ ro.hardware.vulkan=adreno
 
 # Keystore
 ro.hardware.keystore_desede=true
+
+# media
+debug.stagefright.omx_default_rank.sw-audio=16
 
 # OEM Unlock reporting
 ro.oem_unlock_supported=1

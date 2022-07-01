@@ -11,3 +11,5 @@ allow surfaceflinger gmscore_app:process getattr;
 allow surfaceflinger bootanim:file open;
 allow surfaceflinger bootanim:process getattr;
 allow surfaceflinger mediaserver:process getattr;
+allow surfaceflinger permissioncontroller_app:process getattr;
+allow surfaceflinger vendor_fm_app:process getattr;

@@ -84,8 +84,3 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0 \
-    android.hardware.keymaster@4.0-service

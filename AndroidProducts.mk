@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aicp_deen.mk
+    $(LOCAL_DIR)/lineage_deen.mk
 
 COMMON_LUNCH_CHOICES := \
-    aicp_deen-user \
-    aicp_deen-userdebug \
-    aicp_deen-eng
+    lineage_deen-user \
+    lineage_deen-userdebug \
+    lineage_deen-eng

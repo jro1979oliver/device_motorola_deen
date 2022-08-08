@@ -35,7 +35,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
+#PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # A/B updater
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -540,3 +540,4 @@ PRODUCT_PACKAGES += \
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
     libmediaextractorservice
+

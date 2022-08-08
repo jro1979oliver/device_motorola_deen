@@ -1,0 +1,6 @@
+export EOS_DEVICE=deen
+export EOS_RELEASE_TYPE=OFFICIAL
+export EOS_BRANCH_NAME=v1-r
+export EOS_USE_CCACHE=false
+export EOS_SIGNATURE_SPOOFING=yes
+

@@ -24,8 +24,8 @@
 
 $(call inherit-product, vendor/motorola/deen/deen-vendor.mk)
 
-# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Disable APEX compression
 # Keep this after including updatable_apex.mk

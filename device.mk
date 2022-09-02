@@ -203,9 +203,8 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
+    FMRadio \
+    libqcomfm_jni
 
 # GPS
 PRODUCT_PACKAGES += \

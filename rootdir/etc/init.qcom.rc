@@ -521,13 +521,6 @@ service vendor.tftp_server /vendor/bin/tftp_server
    class core
    user root
 
-# FM
-on property:hw.fm.init=0
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
-
-on property:hw.fm.init=1
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
-
 on property:vendor.wc_transport.start_hci=true
     start vendor.start_hci_filter
 
